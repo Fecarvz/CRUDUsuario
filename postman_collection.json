@@ -1,0 +1,39 @@
+{
+    "info": {
+        "name": "User API",
+        "description": "CRUD operations for User",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create User",
+            "request": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": { "mode": "raw", "raw": "{\"name\":\"Felipe\",\"email\":\"felipe@example.com\"}" },
+                "url": { "raw": "http://localhost:3000/users", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["users"] }
+            }
+        },
+        {
+            "name": "Get All Users",
+            "request": {
+                "method": "GET",
+                "url": { "raw": "http://localhost:3000/users", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["users"] }
+            }
+        },
+        {
+            "name": "Get User by ID",
+            "request": {
+                "method": "GET",
+                "url": { "raw": "http://localhost:3000/users/:id", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["users", ":id"] }
+            }
+        },
+        {
+            "name": "Delete User",
+            "request": {
+                "method": "DELETE",
+                "url": { "raw": "http://localhost:3000/users/:id", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["users", ":id"] }
+            }
+        }
+    ]
+}

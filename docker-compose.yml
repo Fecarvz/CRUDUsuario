@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: user-api
+    ports:
+      - "3000:3000"
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=your_username
+      - POSTGRES_PASSWORD=your_password
+      - POSTGRES_DB=your_database
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15
+    container_name: user-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: your_username
+      POSTGRES_PASSWORD: your_password
+      POSTGRES_DB: your_database
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+
+volumes:
+  postgres-data:
