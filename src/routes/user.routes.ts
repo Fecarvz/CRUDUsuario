@@ -1,4 +1,3 @@
-// src/routes/user.ts
 import { Router } from "express";
 import { AppDataSource } from "../data-source";
 import { User } from "../entity/user";

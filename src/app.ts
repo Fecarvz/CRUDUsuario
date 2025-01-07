@@ -1,4 +1,3 @@
-// src/index.ts
 import express from "express";
 import { AppDataSource } from "./data-source";
 import { userRouter } from "./routes/user.routes";
